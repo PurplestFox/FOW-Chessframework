@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "sfJCk9nZK7wSrkSh4/6VeneQuRdRkoOBIGeeqdb7tBKby7DiW0t1x2DgHYXU7x1HIMKyzIRQfRD2ugjuG/a/mw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bened\\Desktop\\FOW-Chess Challenge\\Chess-Challenge\\Chess-Challenge.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bened\\.nuget\\packages\\raylib-cs\\4.5.0.2\\raylib-cs.4.5.0.2.nupkg.sha512",
+    "C:\\Users\\bened\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
