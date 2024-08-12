@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ChessChallenge.API;
 
 namespace ChessChallenge.Chess
@@ -552,8 +553,16 @@ namespace ChessChallenge.Chess
                 int index = BitboardHelper.ClearAndGetIndexOfLSB(ref playerToMovePieces);
                 Square square = new Square(index);
                 Piece piece = fullBoard.GetPiece(square);
+                if ((int)piece.PieceType == 1 && ((piece.IsWhite && (index/8) == 1) || (!piece.IsWhite && (index/8) == 7)))
+                {
+                    //Handle pawns in start pos
+                    ulong temp = 0;
+                    BitboardHelper.SetSquare(ref temp, new Square(index + (piece.IsWhite ? 16 : -16)));
+                    visibleSqaures |= temp;
+                }
                 visibleSqaures |= BitboardHelper.GetPieceAttacks(piece.PieceType, square, fullBoard, piece.IsWhite);
             }
+            //foreach (Byte b in BitConverter.GetBytes(visibleSqaures)) Console.WriteLine(Convert.ToString (b, 2));
 
             // Load pieces into board array and piece lists
             while(visibleSqaures > 0)
