@@ -144,12 +144,14 @@ namespace ChessChallenge.Application
 
         Chess.Move GetBotMove()
         {
-
             //FOW: remove information which is hidden by FOW
-            Board ChessBotBoard = board;
+            Board ChessBotBoard = new Board();
             API.Board tempBoard = new(board);
             ChessBotBoard.GetFOWBoard(PositionFromFen(tempBoard.GetFenString()), tempBoard);
             API.Board botBoard = new(ChessBotBoard);
+            Console.WriteLine(botBoard);
+            //Console.WriteLine(tempBoard.AllPiecesBitboard);
+            //Console.WriteLine(botBoard.AllPiecesBitboard);
 
 
             try
